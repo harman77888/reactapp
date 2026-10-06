@@ -1,5 +1,6 @@
 // import Home from "./pages/Home"
 import UseStateEx from "./pages/UseStateEx"
+// import MapEx from "./pages/MapEx"
 
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <div>
       {/* <Home/> */}
       <UseStateEx/>
+      {/* <MapEx/> */}
     </div>
   )
 }
