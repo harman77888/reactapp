@@ -1,11 +1,14 @@
 
+function App() {
+  const names = ["Harman", "Aman", "Raj"];
 
-const Home = () => {
   return (
     <div>
-        <h1>Welcome to the Blog App</h1>
+      {names.map((name) => (
+        <h2>{name}</h2>
+      ))}
     </div>
-  )
+  );
 }
 
-export default Home
+export default App;
