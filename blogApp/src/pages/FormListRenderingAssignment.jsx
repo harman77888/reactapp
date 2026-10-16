@@ -150,14 +150,8 @@ const FormListRenderingAssignment = () => {
   //  list as the user types. - Display a "No products found" message when there are no matching results.
 
   const products = [
-    { id: 1,
-       name: "Apple",
-        price: 100000 
-      },
-    { id: 2, 
-      name: "Samsung", 
-      price: 20000 
-    },
+    { id: 1, name: "Apple", price: 100000 },
+    { id: 2, name: "Samsung", price: 20000 },
     { id: 3, name: "Google Pixel", price: 30000 },
     { id: 4, name: "Microsoft Surface", price: 40000 },
     { id: 5, name: "Oppo", price: 50000 },
@@ -286,6 +280,7 @@ const FormListRenderingAssignment = () => {
           ))}
         </ul>
       </div>
+
     </div>
   );
 };

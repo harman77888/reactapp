@@ -2,17 +2,18 @@
 // import UseStateEx from "./pages/UseStateEx"
 // import MapEx from "./pages/MapEx"
 // import UseRefEx from "./pages/UseRefEx"
-// import FormListRenderingAssignment from "./pages/FormListRenderingAssignment"
+import FormListRenderingAssignment from "./pages/FormListRenderingAssignment"
 // import FormHandlingEx from "./pages/FormHandlingEx"
 // import ListRenderingEx from "./pages/ListRenderingEx"
-
 // import UseMemoEx from "./pages/UseMemoEx"
-import UserContext from "./context/UserContext";
-import UserScreen from "./pages/UserScreen";
-import Home from "./pages/Home"
+// import UserContext from "./context/UserContext";
+// import UserScreen from "./pages/UserScreen";
+// import Home from "./pages/Home"
+
+// import CounterScreen from "./components/CounterScreen";
 
 const App = () => {
-  const name = "John Doe";
+  // const name = "John Doe";
   return (
     <div>
       {/* <Home/> */}
@@ -20,13 +21,15 @@ const App = () => {
       {/* <MapEx/> */}
       {/* <ListRenderingEx/> */}
       {/* <FormHandlingEx/> */}
-      {/* <FormListRenderingAssignment/> */}
+      <FormListRenderingAssignment/>
       {/* <UseRefEx/> */}
       {/* <UseMemoEx/> */}
-      <UserContext.Provider value={name}>
+      {/* <UserContext.Provider value={name}>
         <UserScreen/>
         <Home/>
-      </UserContext.Provider>
+      </UserContext.Provider> */}
+
+      {/* <CounterScreen/> */}
     </div>
   )
 }
