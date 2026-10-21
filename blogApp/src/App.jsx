@@ -2,13 +2,15 @@
 // import UseStateEx from "./pages/UseStateEx"
 // import MapEx from "./pages/MapEx"
 // import UseRefEx from "./pages/UseRefEx"
-import FormListRenderingAssignment from "./pages/FormListRenderingAssignment"
+// import FormListRenderingAssignment from "./pages/FormListRenderingAssignment"
 // import FormHandlingEx from "./pages/FormHandlingEx"
 // import ListRenderingEx from "./pages/ListRenderingEx"
 // import UseMemoEx from "./pages/UseMemoEx"
 // import UserContext from "./context/UserContext";
 // import UserScreen from "./pages/UserScreen";
 // import Home from "./pages/Home"
+
+import UseEffectAssignment from "./pages/UseEffectAssignment"
 
 // import CounterScreen from "./components/CounterScreen";
 
@@ -21,9 +23,10 @@ const App = () => {
       {/* <MapEx/> */}
       {/* <ListRenderingEx/> */}
       {/* <FormHandlingEx/> */}
-      <FormListRenderingAssignment/>
+      {/* <FormListRenderingAssignment/> */}
       {/* <UseRefEx/> */}
       {/* <UseMemoEx/> */}
+      <UseEffectAssignment/>
       {/* <UserContext.Provider value={name}>
         <UserScreen/>
         <Home/>
