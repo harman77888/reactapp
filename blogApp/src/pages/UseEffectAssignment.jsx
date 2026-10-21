@@ -43,11 +43,11 @@ const UseEffectAssignment = () => {
   //  Q5. Name Display – 3 Marks Create an input field where the user can enter their name.
   //  Use `useEffect()` to display: **Hello, Amit** when the name changes.
 
-  const [name,setName] = useState("");
-  
+  const [name, setName] = useState("");
+
   const updateName = () => {
-    if(name){
-      setName("")
+    if (name) {
+      setName("");
     }
   };
 
@@ -55,31 +55,29 @@ const UseEffectAssignment = () => {
     console.log("Hello Harman");
   }, [name]);
 
-
-  // Q6. Background Color – 3 Marks Create buttons for: - Red - Blue - Green When the user 
-  // selects a color, use `useEffect()` to change the background color 
+  // Q6. Background Color – 3 Marks Create buttons for: - Red - Blue - Green When the user
+  // selects a color, use `useEffect()` to change the background color
   // of a `<div>`.
-  
-  const[color,setColor]=useState();
 
-  const redBtn=()=>{
-    setColor("Red")
-  }
-  const blueBtn=()=>{
-    setColor("Blue")
-  }
-   const greenBtn=()=>{
-    setColor("Green")
-  }
+  const [color, setColor] = useState();
 
-  useEffect(()=>{
+  const redBtn = () => {
+    setColor("Red");
+  };
+  const blueBtn = () => {
+    setColor("Blue");
+  };
+  const greenBtn = () => {
+    setColor("Green");
+  };
+
+  useEffect(() => {
     // document.getElementById("changeColor").style.backgroundColor=color;
-  },[color])
+  }, [color]);
 
-
-  // Q7. Timer – 3 Marks Create a simple timer that starts from **0** and increases by 1 
-  // every second. Use `useEffect()` to create the timer. Display: **Timer: 0** **Timer: 
-  // 1** **Timer: 2** **Timer: 3** 
+  // Q7. Timer – 3 Marks Create a simple timer that starts from **0** and increases by 1
+  // every second. Use `useEffect()` to create the timer. Display: **Timer: 0** **Timer:
+  // 1** **Timer: 2** **Timer: 3**
 
   // const[time,setTime]=useState(0);
 
@@ -90,29 +88,47 @@ const UseEffectAssignment = () => {
   //   return()=>clearInterval(interval)
   // },[time])
 
-  // Q8. Digital Clock – 3 Marks Create a simple digital clock using React. Use `useEffect()` 
-  // and `setInterval()` to update the current time every second. Example: **10:25:01 
-  // AM** 
+  // Q8. Digital Clock – 3 Marks Create a simple digital clock using React. Use `useEffect()`
+  // and `setInterval()` to update the current time every second. Example: **10:25:01
+  // AM**
 
+  const [digitalClock, setDigitalClock] = useState(new Date());
+  useEffect(() => {
+    const clock = setInterval(() => {
+      setDigitalClock(new Date());
+    }, 1000);
+    return () => clearInterval(clock);
+  }, []);
 
-const[digitalClock,setDigitalClock]=useState(new Date());
+  // Q9. Product List – 3 Marks Create a simple product list using an array: - Laptop -
+  // Mobile - Keyboard - Mouse Use `useEffect()` to print: **"Product list loaded"** when
+  // the component loads. Display the products on the webpage.
 
-useEffect(()=>{
-  const clock=setInterval(()=>{
-    setDigitalClock(new Date())
-  },1000)
-  return()=>clearInterval(clock)
-},[])
+  const products = ["Laptop", "Mobile", "Keyboard", "Mouse"];
 
+  useEffect(()=>{
+    setTimeout(()=>{
+     document.getElementById("head").innerHTML="Product is loading"
+   
+    },5000)
+  })
 
-// Q9. Product List – 3 Marks Create a simple product list using an array: - Laptop - 
-// Mobile - Keyboard - Mouse Use `useEffect()` to print: **"Product list loaded"** when 
-// the component loads. Display the products on the webpage. 
+  // Q10. Cleanup Function – 3 Marks Create a timer using `setInterval()` inside `useEffect()`.
+  // Use the cleanup function to clear the interval when the component is removed. Print:
+  // `Timer Started` when the timer starts and: `Timer Stopped` when the component is removed.
 
+  // const[timer,setTimer]=useState(0);
 
+  // const resetTimer=()=>{
+  //   clearInterval();
+  // }
 
-
-
+  // useEffect(()=>{
+  //    const prev= setInterval(()=>{
+  //     setTimer(timer+1)
+  //   },1000)
+  //   return()=>clearInterval(prev)
+  // },[timer])
 
   return (
     <div>
@@ -134,12 +150,14 @@ useEffect(()=>{
       <h1>{name}</h1>
       <button onClick={updateName}>Change Name</button>
 
-
-      <div id="changeColor" style={{
-        width:"100vw",
-        height:"100vh",
-        backgroundColor:color
-      }}>
+      <div
+        id="changeColor"
+        style={{
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: color,
+        }}
+      >
         <button onClick={redBtn}>Red</button>
         <button onClick={blueBtn}>Blue</button>
         <button onClick={greenBtn}>Green</button>
@@ -147,8 +165,20 @@ useEffect(()=>{
         {/* <h1>{time}</h1> */}
       </div>
 
-      <h1>{digitalClock.toLocaleTimeString()}</h1>
-
+      <h1 id="head"></h1>
+      {
+        products.map((product, index)=>{
+          <h1 key={index}>{product}</h1>
+        })
+      }
+      <div style={{ display: "flex", gap: "10px" }}>
+        <h1>{digitalClock.getHours()} : </h1>
+        <h1>{digitalClock.getMinutes()} : </h1>
+        <h1>{digitalClock.getSeconds()}</h1>
+      </div>
+      {/* <h1>{timer}</h1>
+      <button onClick={()=>setTimer(1)}>Start</button>
+      <button onClick={()=>setTimer(0)}>Reset</button> */}
     </div>
   );
 };
