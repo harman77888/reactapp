@@ -39,23 +39,39 @@
 
 // export default App
 
+// import {BrowserRouter,Routes,Route} from 'react-router-dom'
+// // import Home from './pages/Home';
+// import HomePage from './pages/HomePage';
+// import AboutPage from './pages/AboutPage';
 
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
-// import Home from './pages/Home';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
+// const App = () => {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path='/' element={<HomePage/>} />
+//           <Route path='/about' element={<AboutPage/>} />
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
+
+// export default App
+import { useState } from "react";
+import {ThemeProvider} from "./context/DarkModeContext";
+
+// import AboutPage from "./pages/AboutPage";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
+  const [theme,setTheme]=useState('light')
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<HomePage/>} />
-          <Route path='/about' element={<AboutPage/>} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  )
-}
+    <ThemeProvider value={{theme,setTheme}}>
+      {/* <AboutPage /> */}
+      <HomePage />
+    </ThemeProvider>
+  );
+};
 
-export default App
+export default App;
