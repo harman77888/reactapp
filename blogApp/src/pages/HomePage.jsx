@@ -262,26 +262,43 @@
 // export default HomePage;
 
 
-import { useContext } from "react";
-import DarkModeContext from "../context/DarkModeContext";
+// import { useContext } from "react";
+// import DarkModeContext from "../context/DarkModeContext";
+
+// const HomePage = () => {
+//   const { theme, toggleBtn } = useContext(DarkModeContext);
+
+//   const styles = {
+//     backgroundColor: theme === "light" ? "white" : "#222",
+//     color: theme === "light" ? "black" : "white",
+//     minHeight: "100vh",
+//     textAlign: "center",
+//     padding: "30px",
+//   };
+
+//   return (
+//     <div style={styles}>
+//       <h1>{theme === "light" ? "Light Mode" : "Dark Mode"}</h1>
+//       <button onClick={toggleBtn}>Switch Theme</button>
+//     </div>
+//   );
+// };
+
+// export default HomePage;
+
+
+
+import StoreName from "../context/StoreName"
+import { useContext } from "react"
 
 const HomePage = () => {
-  const { theme, toggleBtn } = useContext(DarkModeContext);
-
-  const styles = {
-    backgroundColor: theme === "light" ? "white" : "#222",
-    color: theme === "light" ? "black" : "white",
-    minHeight: "100vh",
-    textAlign: "center",
-    padding: "30px",
-  };
-
+  const name=useContext(StoreName)
   return (
-    <div style={styles}>
-      <h1>{theme === "light" ? "Light Mode" : "Dark Mode"}</h1>
-      <button onClick={toggleBtn}>Switch Theme</button>
+    <div>
+      <p>This is About page</p>
+      <h1>{name}</h1>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

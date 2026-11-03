@@ -9,11 +9,8 @@
 // import UserContext from "./context/UserContext";
 // import UserScreen from "./pages/UserScreen";
 // import Home from "./pages/Home"
-
 // import UseEffectAssignment from "./pages/UseEffectAssignment"
-
 // import CounterScreen from "./components/CounterScreen";
-
 // const App = () => {
 //   // const name = "John Doe";
 //   return (
@@ -36,14 +33,11 @@
 //     </div>
 //   )
 // }
-
 // export default App
-
 // import {BrowserRouter,Routes,Route} from 'react-router-dom'
 // // import Home from './pages/Home';
 // import HomePage from './pages/HomePage';
 // import AboutPage from './pages/AboutPage';
-
 // const App = () => {
 //   return (
 //     <div>
@@ -56,22 +50,89 @@
 //     </div>
 //   )
 // }
+// export default App
+// import { useState } from "react";
+// import {ThemeProvider} from "./context/DarkModeContext";
+// // import AboutPage from "./pages/AboutPage";
+// import HomePage from "./pages/HomePage";
+// const App = () => {
+//   const [theme,setTheme]=useState('light')
+//   return (
+//     <ThemeProvider value={{theme,setTheme}}>
+//       {/* <AboutPage /> */}
+//       <HomePage />
+//     </ThemeProvider>
+//   );
+// };
+
+// export default App;
+// import { useState } from "react"
+// import { Storeprovider } from "./context/StoreName"
+// import AboutPage from "./pages/AboutPage"
+// import HomePage from "./pages/HomePage"
+// const App = () => {
+// const[name,setName]=useState('Harmanpreet Singh')
+//   return (
+//     <div>
+//       <Storeprovider value={{name,setName}}>
+//         <AboutPage/>
+//         <HomePage/>
+//       </Storeprovider>
+//     </div>
+//   )
+// }
+// export default App
+
+
+// import LanguageContext from "./context/LanguageContext"
+// import LanguagePage  from "./pages/LanguagePage"
+// import { useState } from "react"
+// const App = () => {
+//   const [lang,setLang]=useState("English")
+//   return (
+//     <div>
+//       <LanguageContext.Provider value={{lang,setLang}}>
+//         <LanguagePage/>
+//       </LanguageContext.Provider>
+//     </div>
+//   )
+// }
 
 // export default App
+// import LoginContext from "./context/LoginContext"
+// import LoginPage from "./pages/LoginPage"
+// import { useState } from "react"
+// const App = () => {
+//   const [isLogin,setIsLogin]=useState(false);
+//   return (
+//     <div>
+//       <LoginContext.Provider value={{isLogin,setIsLogin}}>
+//         <LoginPage/>
+//       </LoginContext.Provider>
+//     </div>
+//   )
+// }
+// export default App
+
+
+import CartContext from "./context/CartContext";
+import CartPage from "./pages/CartPage";
 import { useState } from "react";
-import {ThemeProvider} from "./context/DarkModeContext";
-
-// import AboutPage from "./pages/AboutPage";
-import HomePage from "./pages/HomePage";
-
+import Navbar from "./components/NavBar";
 const App = () => {
-  const [theme,setTheme]=useState('light')
+  const[cart]=useState('');
   return (
-    <ThemeProvider value={{theme,setTheme}}>
-      {/* <AboutPage /> */}
-      <HomePage />
-    </ThemeProvider>
-  );
-};
+    <div>
+      <CartContext.Provider value={{cart}}>
+        <CartPage/>
+        <Navbar/>
+      </CartContext.Provider>
+    </div>
+  )
+}
 
-export default App;
+export default App
+
+
+
+
